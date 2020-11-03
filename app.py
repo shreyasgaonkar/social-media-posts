@@ -47,7 +47,12 @@ with build('youtube', 'v3', developerKey=api_key) as service:
     hashtags = re.split("\n", description)[-1]
 
 # Save image locally to tweet
-urllib.request.urlretrieve(thumbnail, "tweet.jpg")
+try:
+    urllib.request.urlretrieve(thumbnail, "tweet.jpg")
+except urllib.error.HTTPError as exp:
+    print("Error: {exp}")
+except Exception as exp:
+    print("Error: {exp}")
 
 
 # Authenticate to Twitter
@@ -60,6 +65,10 @@ api = tweepy.API(auth)
 # Custom status message
 status = f"{title}\n\nNew Video out now! \n\n {video_url} \n\n {hashtags}"
 
-# Create a tweet
-api.update_with_media(filename="tweet.jpg", status=status)
-os.remove("tweet.jpg")
+# Create a tweet and handle any exceptions
+try:
+    api.update_with_media(filename="tweet.jpg", status=status)
+except Exception as exp:
+    print("Error: {exp}")
+finally:
+    os.remove("tweet.jpg")
