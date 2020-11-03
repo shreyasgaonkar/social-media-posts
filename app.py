@@ -1,6 +1,7 @@
 """Python function to get latest YouTube video's metadata to post a tweet"""
 
 import re
+import os
 import json
 import urllib.request
 import tweepy
@@ -61,3 +62,4 @@ status = f"{title}\n\nNew Video out now! \n\n {video_url} \n\n {hashtags}"
 
 # Create a tweet
 api.update_with_media(filename="tweet.jpg", status=status)
+os.remove("tweet.jpg")
