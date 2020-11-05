@@ -1,4 +1,4 @@
-# Automate social media posts [![HitCount](http://hits.dwyl.com/shreyasgaonkar/social-media-posts.svg)](http://hits.dwyl.com/shreyasgaonkar/social-media-posts)
+# Automate social media posts
 
 ### The background
 
