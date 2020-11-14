@@ -3,6 +3,7 @@
 import re
 import os
 import json
+import html
 import urllib.request
 import tweepy
 from googleapiclient.discovery import build
@@ -29,7 +30,7 @@ with build('youtube', 'v3', developerKey=api_key) as service:
     )
     response = request.execute()
 
-    title = response['items'][0]['snippet']['title']
+    title = html.unescape(response['items'][0]['snippet']['title'])
     video_id = response['items'][0]['id']['videoId']
     video_url = f"https://youtu.be/{video_id}"
 
