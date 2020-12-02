@@ -64,9 +64,10 @@ auth.set_access_token(twitter_access_token, twitter_access_token_secret)
 api = tweepy.API(auth)
 
 # Custom status message
-status = f"{title}\n\nNew Video out now! \n\n {video_url} \n\n {hashtags}"
+status = f"{title}\n\nNew Video out now! \n\n{video_url} \n\n{hashtags}"
 
 # Create a tweet and handle any exceptions
+
 try:
     api.update_with_media(filename="tweet.jpg", status=status)
 except Exception as exp:
