@@ -48,6 +48,9 @@ git clone https://github.com/shreyasgaonkar/social-media-posts.git
 ```
 6. Run ```python app.py``` to post thumbail image from your latest video
 
+### Issues
+If you run into this error: ```AttributeError: 'Http' object has no attribute 'http'``` , refer to the solution here: https://github.com/googleapis/google-api-python-client/issues/1046
+
 ### Customize tweet
 
 Replace this section from ```app.py``` to what fits your use-case and Twitter's character count:
