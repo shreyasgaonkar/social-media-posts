@@ -46,14 +46,18 @@ with build('youtube', 'v3', developerKey=api_key) as service:
 
     # hashtags are a part of the last line in the description
     hashtags = re.split("\n", description)[-1]
+    hashtags = hashtags.split(" ")
+    hashtags = list(filter(None, hashtags))  # Remove any empty hashtags
+    hashtags = hashtags[:10]  # Get only first 10 since twitter's char limit
+    hashtags = ' '.join(hashtags)
 
 # Save image locally to tweet
 try:
     urllib.request.urlretrieve(thumbnail, "tweet.jpg")
 except urllib.error.HTTPError as exp:
-    print("Error: {exp}")
+    print(f"Error: {exp}")
 except Exception as exp:
-    print("Error: {exp}")
+    print(f"Error: {exp}")
 
 
 # Authenticate to Twitter
@@ -71,6 +75,6 @@ status = f"{title}\n\nNew Video out now! \n\n{video_url} \n\n{hashtags}"
 try:
     api.update_with_media(filename="tweet.jpg", status=status)
 except Exception as exp:
-    print("Error: {exp}")
+    print(f"Error: {exp}")
 finally:
     os.remove("tweet.jpg")
