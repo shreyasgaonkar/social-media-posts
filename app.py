@@ -42,7 +42,7 @@ with build('youtube', 'v3', developerKey=api_key) as service:
     response = request.execute()
 
     description = response['items'][0]['snippet']['description']
-    thumbnail = response['items'][0]['snippet']['thumbnails']['maxres']['url']
+    thumbnail = response['items'][0]['snippet']['thumbnails']['high']['url']
 
     # hashtags are a part of the last line in the description
     hashtags = re.split("\n", description)[-1]
