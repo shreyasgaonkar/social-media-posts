@@ -73,7 +73,9 @@ status = f"{title}\n\nNew Video out now! \n\n{video_url} \n\n{hashtags}"
 # Create a tweet and handle any exceptions
 
 try:
-    api.update_with_media(filename="tweet.jpg", status=status)
+    response = api.update_with_media(filename="tweet.jpg", status=status)
+    response_url = json.loads(json.dumps(response._json))['entities']['urls'][-1]['url']
+    print(f'Success! Tweet live at {response_url}')
 except Exception as exp:
     print(f"Error: {exp}")
 finally:
