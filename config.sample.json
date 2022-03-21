@@ -1,13 +1,11 @@
-Rename this file as config.json and delete all non - json data
+// Rename this file as config.json and delete all non - json data
 
-YouTube API: https: //developers.google.com/youtube/v3/getting-started
-    Twitter API: https: //developer.twitter.com/
-
-    {
-        "youtube_API_key": "XXXX",
-        "twitter_API_Key": "XXXX",
-        "twitter_secret_key": "XXXX",
-        "twitter_bearer_token": "XXXX",
-        "twitter_access_token": "XXXX",
-        "twitter_access_token_secret": "XXXX"
-    }
+{
+    "youtube_channel_id": "XXXX",
+    "youtube_API_key": "XXXX",
+    "twitter_API_Key": "XXXX",
+    "twitter_secret_key": "XXXX",
+    "twitter_bearer_token": "XXXX",
+    "twitter_access_token": "XXXX",
+    "twitter_access_token_secret": "XXXX"
+}

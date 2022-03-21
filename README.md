@@ -15,8 +15,9 @@ Using YouTube's API calls, this will fetch metadata from the latest video includ
 
 ### Pre-reqs
 
-1. Google developer account with API keys
-2. Twitter developer account with API keys
+1. Get YouTube Channel ID from https://www.youtube.com/account_advanced
+1. Google developer account with API keys. If you don't have it yet or misplaced the keys, generate it here: https://developers.google.com/youtube/v3/getting-started
+1. Twitter developer account with API keys from https://developer.twitter.com/
 
 
 ### Installation
@@ -38,6 +39,7 @@ git clone https://github.com/shreyasgaonkar/social-media-posts.git
 5. Update config.json with your developer keys from Twitter and YouTube:
 ```json
 {
+    "youtube_channel_id": "XXXX",
     "youtube_API_key": "XXXX",
     "twitter_API_Key": "XXXX",
     "twitter_secret_key": "XXXX",
